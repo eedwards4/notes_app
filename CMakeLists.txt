@@ -12,6 +12,8 @@ set(CMAKE_PREFIX_PATH "C:/Qt/6.6.1/mingw_64")
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Charts QUIET)
 
-add_executable(notes_app main.cpp)
+add_executable(notes_app main.cpp mainwindow.cpp mainwindow.h)
 
 target_link_libraries(notes_app PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/res DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
